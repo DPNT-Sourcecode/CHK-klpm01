@@ -57,20 +57,20 @@ def checkout(skus):
             "calc": lambda v: v*15
         },
         'N':{
-            "price":15,
-            "calc": lambda v: v*15
+            "price":40,
+            "calc": lambda v: v*40
         },
         'O':{
-            "price":15,
-            "calc": lambda v: v*15
+            "price":10,
+            "calc": lambda v: v*10
         },
         'P':{
-            "price":15,
-            "calc": lambda v: v*15
+            "price":50,
+            "calc": lambda v: ((v//5)*200+(v%5)*50) 
         },
         'Q':{
-            "price":15,
-            "calc": lambda v: v*15
+            "price":30,
+            "calc": lambda v: ((v//3)*80+(v%3)*30) 
         },
         'R':{
             "price":15,
@@ -136,4 +136,5 @@ def checkout(skus):
         # (B//2)*45+(B%2)*30) + C*20 + D*15 + E*40 + F * 10
     
 checkout("ABDDEGREGHTHKYUGJHREYHYUK")
+
 
