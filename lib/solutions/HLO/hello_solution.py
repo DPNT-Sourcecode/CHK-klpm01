@@ -5,5 +5,3 @@
 def hello(friend_name):
     return "Hello, {}!".format(friend_name)
 
-
-print(hello("ALi"))
