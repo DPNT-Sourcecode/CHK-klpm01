@@ -13,6 +13,9 @@ def checkout(skus):
     B = skus_list.count('B')
     C = skus_list.count('C')
     D = skus_list.count('D')
-    if (A+B+C+D != len(skus_list)): return -1
+    if (A+B+C+D != len(skus_list)):
+        return -1
+    else:
+        return ((A//3)*130+(A%3)*50)+((B//2)*45+(A%2)*30)+C*20+D*15
     
-
+    
