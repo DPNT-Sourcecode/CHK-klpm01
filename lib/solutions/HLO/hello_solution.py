@@ -7,5 +7,3 @@ def hello(friend_name):
 
 
 print(hello("ALi"))
-
-
