@@ -107,13 +107,8 @@ def checkout(skus):
         'Z':{
             "price":50,
             "calc": lambda v: v*50
-        },
-        
-        
+        }
     }
-    
-    
-    
     sumItems = 0
     items = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
     item_count = list()
@@ -125,8 +120,9 @@ def checkout(skus):
         return -1
     else:
         sumTotal = 0
+        
         for item, count in item_count:
-            
+            pass
         
         # B = B - (E//2)
         # F = F - (F//3)
