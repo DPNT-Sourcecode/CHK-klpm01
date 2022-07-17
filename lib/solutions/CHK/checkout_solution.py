@@ -12,5 +12,6 @@ def checkout(skus):
     if (A+B+C+D != len(skus_list)):
         return -1
     else:
-        return ((A//3)*130+(A%3)*50)+((B//2)*45+(B%2)*30)+C*20+D*15
+        # return ((A//3)*130+(A%3)*50)+((B//2)*45+(B%2)*30)+C*20+D*15
+        
     
