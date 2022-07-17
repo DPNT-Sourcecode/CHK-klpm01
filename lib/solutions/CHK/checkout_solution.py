@@ -136,6 +136,3 @@ def checkout(skus):
         # (B//2)*45+(B%2)*30) + C*20 + D*15 + E*40 + F * 10
     
 checkout("ABDDEGREGHTHKYUGJHREYHYUK")
-
-
-
