@@ -146,7 +146,7 @@ def checkout(skus):
             # new group promotion
             s = item_count['S'] + item_count['T'] + item_count['X'] +item_count['Y'] +item_count['Z']
             if s>=3:
-                sumTotal = item_table['Promo1']['calc'](s//3)
+                sumTotal += item_table['Promo1']['calc'](s//3)
                 item_count['S']=0
                 item_count['T']=0
                 item_count['Y']=0
@@ -159,6 +159,7 @@ def checkout(skus):
         return sumTotal
     
 print(checkout('CXYZYZC'))
+
 
 
 
