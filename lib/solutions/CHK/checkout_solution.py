@@ -151,14 +151,14 @@ def checkout(skus):
                 item_count['T']=0
                 item_count['Y']=0
                 item_count['Z']=0
-                item_count['X']= s%3 # always side with the customer
-            
+                item_count['X']= 0 # always side with the customer
+                sumTotal+=20*(s%3)
         for item in item_count.keys():
             sumTotal+= item_table[item]['calc'](item_count[item])
 
         return sumTotal
     
-print(checkout('SSSZ'))
+print(checkout('CXYZYZC'))
 
 
 
