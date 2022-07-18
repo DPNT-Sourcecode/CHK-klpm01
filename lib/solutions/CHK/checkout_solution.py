@@ -150,24 +150,23 @@ def checkout(skus):
                 
                 if item_count['Z']>0 and s>=3: 
                     s-=item_count['Z']
-                    item_count['Z']=0
-                    print(s)
+                    item_count['Z']=s%3
+                    
                 if item_count['S']>0 and s>=3: 
                     s-=item_count['S']
-                    item_count['S']=0
-                    print(s)
+                    item_count['S']=s%3
 
                 if item_count['T']>0 and s>=3: 
                     s-=item_count['T']
-                    item_count['T']=0
+                    item_count['T']=s%3
                 
                 if item_count['Y']>0 and s>=3: 
                     s-=item_count['Y']
-                    item_count['Y']=0
+                    item_count['Y']=s%3
                 
                 if item_count['X']>0 and s>=3: 
                     s-=item_count['X']
-                    item_count['X']=0
+                    item_count['X']=s%3
                                 
         for item in item_count.keys():
             sumTotal+= item_table[item]['calc'](item_count[item])
@@ -175,4 +174,5 @@ def checkout(skus):
         return sumTotal
     
 print(checkout('SSSZ'))
+
 
