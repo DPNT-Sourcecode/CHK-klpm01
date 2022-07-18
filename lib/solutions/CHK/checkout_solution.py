@@ -153,29 +153,22 @@ def checkout(skus):
                     shouldtake-=1
                     item_count['Z']-=1
                     
-                while s//3!=0 and item_count['S']!=0: 
-                    s-=1
+                while shouldtake>0 and item_count['S']!=0: 
+                    shouldtake-=1
                     item_count['S']-=1
-                    
-                while s//3!=0 and item_count['T']!=0: 
-                    s-=1
+                
+                while shouldtake>0 and item_count['T']!=0: 
+                    shouldtake-=1
                     item_count['T']-=1
-                    
-                while s//3!=0 and item_count['Y']!=0: 
-                    s-=1
+                while shouldtake>0 and item_count['Y']!=0: 
+                    shouldtake-=1
                     item_count['Y']-=1
-                    
-                while s//3!=0 and item_count['X']!=0: 
-                    s-=1
+                while shouldtake>0 and item_count['X']!=0: 
+                    shouldtake-=1
                     item_count['X']-=1
                     
         for item in item_count.keys():
-            print(item, item_count[item])
             sumTotal+= item_table[item]['calc'](item_count[item])
 
         return sumTotal
     
-print(checkout('ZZZS'))
-
-
-
