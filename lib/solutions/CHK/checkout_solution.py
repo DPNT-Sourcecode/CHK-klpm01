@@ -148,16 +148,29 @@ def checkout(skus):
             if s>=3:
                 sumTotal += item_table['Promo1']['calc'](s//3)
                 if item_count['Z']>0 and s!=0: 
-                    s-=item_count['z']
+                    s-=item_count['Z']
                     item_count['Z']=0
-                item_count['S']=0
-                item_count['T']=0
-                item_count['Y']=0
-                item_count['X']= 0 # always side with the customer
-                print(sumTotal)
+                    print(s)
+                if item_count['S']>0 and s!=0: 
+                    s-=item_count['S']
+                    item_count['S']=0
+                    print(s)
+
+                if item_count['T']>0 and s!=0: 
+                    s-=item_count['T']
+                    item_count['T']=0
+                
+                if item_count['Y']>0 and s!=0: 
+                    s-=item_count['Y']
+                    item_count['Y']=0
+                
+                if item_count['X']>0 and s!=0: 
+                    s-=item_count['X']
+                    item_count['X']=0
+                                
         for item in item_count.keys():
             sumTotal+= item_table[item]['calc'](item_count[item])
 
         return sumTotal
     
-print(checkout('CXYZYZC'))
+print(checkout('SSSZ'))
