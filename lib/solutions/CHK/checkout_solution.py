@@ -128,13 +128,11 @@ def checkout(skus):
                 item_count['B'] = item_count['B'] - (item_count['E']//2)
             if item=='N':
                 item_count['M'] = item_count['M'] - (item_count['N']//3)
-                
-        
-        # B = B - (E//2)
-        # F = F - (F//3)
-        # if(B<0):
-        #     B = 0
-        
-        # (B//2)*45+(B%2)*30) + C*20 + D*15 + E*40 + F * 10
-    
-# checkout("ABDDEGREGHTHKYUGJHREYHYUK")
+            if item=='R':
+                item_count['Q'] = item_count['Q'] - (item_count['R']//3)
+            
+        for item in item_count.keys():
+            sumTotal+= item_table[item]['calc'](item_count[item])
+
+        return sumTotal
+print(checkout("AAAAA"))
