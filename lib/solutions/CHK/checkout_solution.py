@@ -111,18 +111,24 @@ def checkout(skus):
     }
     sumItems = 0
     items = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-    item_count = list()
+    item_count = dict()
     skus_list = list(skus)
     for i in items:
-        item_count.append((i,skus_list.count(i)))
-        sumItems+=skus_list.count(i)
+        if i not in item_count.keys():
+            item_count[i] = skus_list.count(i)
+            sumItems+=skus_list.count(i)
+    
     if (sumItems != len(skus_list)):
         return -1
     else:
         sumTotal = 0
         
-        for item, count in item_count:
-            pass
+        for item in item_count.keys():
+            if item=='E':
+                item_count['B'] = item_count['B'] - (item_count['E']//2)
+            if item=='N':
+                item_count['M'] = item_count['M'] - (item_count['N']//3)
+                
         
         # B = B - (E//2)
         # F = F - (F//3)
