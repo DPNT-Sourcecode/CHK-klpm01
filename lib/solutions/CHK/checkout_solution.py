@@ -108,7 +108,7 @@ def checkout(skus):
             "price":21,
             "calc": lambda v: v*50
         },
-        'newPromo':{
+        'Promo1':{
             'price': 45,
             'calc': lambda v: v*45
         }
@@ -142,11 +142,13 @@ def checkout(skus):
                 if(item_count['Q']<0):
                     item_count['Q'] = 0
             
-            
+            s = item_count['S'] + item_count['T'] + item_count['X'] +item_count['Y'] +item_count['Z'] +
+            sumTotal = item_table['Promo1']['calc'](s//5)
             
         for item in item_count.keys():
             if item in ['S','T','X','Y','Z']:
-                
+                continue    
             sumTotal+= item_table[item]['calc'](item_count[item])
 
         return sumTotal
+
