@@ -79,7 +79,7 @@ def checkout(skus):
         },
         'S':{
             "price":20,
-            "calc": lambda v: v*30
+            "calc": lambda v: v*20
         },
         'T':{
             "price":20,
@@ -99,15 +99,15 @@ def checkout(skus):
         },
         'X':{
             "price":17,
-            "calc": lambda v: v*90
+            "calc": lambda v: v*17
         },
         'Y':{
             "price":20,
-            "calc": lambda v: v*10
+            "calc": lambda v: v*20
         },
         'Z':{
             "price":21,
-            "calc": lambda v: v*50
+            "calc": lambda v: v*21
         },
         'Promo1':{
             'price': 45,
@@ -159,6 +159,7 @@ def checkout(skus):
             sumTotal+= item_table[item]['calc'](item_count[item])
 
         return sumTotal
+
 
 
 
