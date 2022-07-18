@@ -90,7 +90,7 @@ def checkout(skus):
         },
         'V':{
             "price":50,
-            "calc": lambda v: (((v//3)*90) + ((v%3)//2) * 90 + ((v%3)%2) * 50)
+            "calc": lambda v: (((v//3)*130) + ((v%3)//2) * 90 + ((v%3)%2) * 50)
         },
         'W':{
             "price":20,
@@ -126,12 +126,19 @@ def checkout(skus):
         for item in item_count.keys():
             if item=='E':
                 item_count['B'] = item_count['B'] - (item_count['E']//2)
+                if(item_count['B']<0):
+                    item_count['B'] = 0
             if item=='N':
                 item_count['M'] = item_count['M'] - (item_count['N']//3)
+                if(item_count['M']<0):
+                    item_count['M'] = 0
             if item=='R':
                 item_count['Q'] = item_count['Q'] - (item_count['R']//3)
+                if(item_count['Q']<0):
+                    item_count['Q'] = 0
             
         for item in item_count.keys():
             sumTotal+= item_table[item]['calc'](item_count[item])
 
         return sumTotal
+
