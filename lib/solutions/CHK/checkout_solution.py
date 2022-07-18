@@ -135,4 +135,3 @@ def checkout(skus):
             sumTotal+= item_table[item]['calc'](item_count[item])
 
         return sumTotal
-print(checkout("AAAAA"))
