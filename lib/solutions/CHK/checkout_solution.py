@@ -3,9 +3,7 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-    def Promo(v):
-        
-        return v*45
+    
     item_table = {
         'A':{
             "price":50,
@@ -113,7 +111,7 @@ def checkout(skus):
         },
         'Promo1':{
             'price': 45,
-            'calc': 
+            'calc': lambda v: v*45
         }
         
     }
@@ -155,5 +153,6 @@ def checkout(skus):
             sumTotal+= item_table[item]['calc'](item_count[item])
 
         return sumTotal
+
 
 
