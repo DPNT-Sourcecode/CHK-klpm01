@@ -150,28 +150,27 @@ def checkout(skus):
                 while s>=2 and item_count['Z']!=0: 
                     s-=1
                     item_count['Z']-=1
-                    print("Z",s,item_count['Z'])                 
+                    
                 while s>=2 and item_count['S']!=0: 
                     s-=1
                     item_count['S']-=1
-                    print("S",s,item_count['S'])                 
                     
-                if item_count['T']>0 and s>=3: 
-                    s-=item_count['T']
-                    item_count['T']=s%3
-                
-                if item_count['Y']>0 and s>=3: 
-                    s-=item_count['Y']
-                    item_count['Y']=s%3
-                
-                if item_count['X']>0 and s>=3: 
-                    s-=item_count['X']
-                    item_count['X']=s%3
-                                
+                while s>=2 and item_count['T']!=0: 
+                    s-=1
+                    item_count['T']-=1
+                    
+                while s>=2 and item_count['Y']!=0: 
+                    s-=1
+                    item_count['Y']-=1
+                    
+                while s>=2 and item_count['X']!=0: 
+                    s-=1
+                    item_count['X']-=1
+                    
         for item in item_count.keys():
-            # print(item, item_count[item])
+            print(item, item_count[item])
             sumTotal+= item_table[item]['calc'](item_count[item])
 
         return sumTotal
     
-print(checkout('ZZZS'))
+print(checkout('CXYZYZC'))
