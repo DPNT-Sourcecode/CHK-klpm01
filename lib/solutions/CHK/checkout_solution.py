@@ -169,6 +169,7 @@ def checkout(skus):
                     item_count['X']=s%3
                                 
         for item in item_count.keys():
+            print(item, item_count[item])
             sumTotal+= item_table[item]['calc'](item_count[item])
 
         return sumTotal
