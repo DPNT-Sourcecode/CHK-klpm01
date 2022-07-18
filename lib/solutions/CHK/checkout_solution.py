@@ -148,8 +148,9 @@ def checkout(skus):
             if s>=3:
                 
                 sumTotal += item_table['Promo1']['calc'](s//3)
-                while s//3!=0 and item_count['Z']!=0: 
-                    s-=1
+                shouldtake = (s//3)*3
+                while shouldtake>0 and item_count['Z']!=0: 
+                    shouldtake-=1
                     item_count['Z']-=1
                     
                 while s//3!=0 and item_count['S']!=0: 
@@ -175,5 +176,6 @@ def checkout(skus):
         return sumTotal
     
 print(checkout('ZZZS'))
+
 
 
