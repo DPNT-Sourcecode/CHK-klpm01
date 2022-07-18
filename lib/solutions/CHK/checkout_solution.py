@@ -45,8 +45,8 @@ def checkout(skus):
             "calc": lambda v: v*60
         },
         'K':{
-            "price":80,
-            "calc": lambda v: ((v//2)*150+(v%2)*80) 
+            "price":70,
+            "calc": lambda v: ((v//2)*120+(v%2)*70) 
         },
         'L':{
             "price":90,
@@ -77,7 +77,7 @@ def checkout(skus):
             "calc": lambda v: v*50
         },
         'S':{
-            "price":30,
+            "price":20,
             "calc": lambda v: v*30
         },
         'T':{
@@ -97,17 +97,22 @@ def checkout(skus):
             "calc": lambda v: v*20
         },
         'X':{
-            "price":90,
+            "price":17,
             "calc": lambda v: v*90
         },
         'Y':{
-            "price":10,
+            "price":20,
             "calc": lambda v: v*10
         },
         'Z':{
-            "price":50,
+            "price":21,
             "calc": lambda v: v*50
+        },
+        'newPromo':{
+            'price': 45,
+            'calc': lambda v: v*45
         }
+        
     }
     sumItems = 0
     items = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
@@ -137,8 +142,11 @@ def checkout(skus):
                 if(item_count['Q']<0):
                     item_count['Q'] = 0
             
+            
+            
         for item in item_count.keys():
+            if item in ['S','T','X','Y','Z']:
+                
             sumTotal+= item_table[item]['calc'](item_count[item])
 
         return sumTotal
-
