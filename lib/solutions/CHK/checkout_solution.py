@@ -3,6 +3,9 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
+    def Promo(v):
+        
+        return v*45
     item_table = {
         'A':{
             "price":50,
@@ -110,7 +113,7 @@ def checkout(skus):
         },
         'Promo1':{
             'price': 45,
-            'calc': lambda v: v*45
+            'calc': 
         }
         
     }
@@ -143,7 +146,8 @@ def checkout(skus):
                     item_count['Q'] = 0
             
             s = item_count['S'] + item_count['T'] + item_count['X'] +item_count['Y'] +item_count['Z'] +
-            sumTotal = item_table['Promo1']['calc'](s//5)
+            sumTotal = item_table['Promo1']['calc'](s//3)
+            
             
         for item in item_count.keys():
             if item in ['S','T','X','Y','Z']:
@@ -151,4 +155,5 @@ def checkout(skus):
             sumTotal+= item_table[item]['calc'](item_count[item])
 
         return sumTotal
+
 
