@@ -154,11 +154,11 @@ def checkout(skus):
                 item_count['X']= s%3 # always side with the customer
             
         for item in item_count.keys():
-            if s>3 and item in ['S','T','X','Y','Z']:
-                continue    
             sumTotal+= item_table[item]['calc'](item_count[item])
 
         return sumTotal
+    
+print(checkout('SSSZ'))
 
 
 
